@@ -1,6 +1,6 @@
 extern crate itest;
 
-use itest::prelude::*;
+use itest::{Result, TestDir, new_test_dir};
 use std::path::{Path, PathBuf};
 
 #[test]

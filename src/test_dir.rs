@@ -37,8 +37,4 @@ impl TestDir {
 
     Ok(TestDir { path: dir })
   }
-
-  pub fn path_str(&self) -> &str {
-    self.path.to_str().expect("valid path")
-  }
 }

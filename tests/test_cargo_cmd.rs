@@ -1,6 +1,6 @@
 extern crate itest;
 
-use itest::prelude::*;
+use itest::{CargoCmd, Result, TestDir, new_test_dir};
 
 #[test]
 fn should_run_cargo_bin() -> Result<()> {

@@ -1,6 +1,23 @@
 use color_eyre::eyre::{Result, WrapErr};
 use std::path::PathBuf;
 
+/// Creates an empty directory under `target/test_output` for an integration
+/// test case to use.
+///
+/// For example, given an integration test file `tests/test1.rs` with teh
+/// following test case
+///
+/// ```rust
+/// #[test]
+/// fn should_pass() {
+///   let dir = new_test_dir!();
+/// }
+/// ```
+///
+/// When `new_test_dir!` executes within `should_pass`, it will create an empty
+/// directory `target/test_output/test1::should_pass` for the test case to use.
+/// When the test finishes, this directory remains available for manual
+/// inspection later on.
 #[macro_export]
 macro_rules! new_test_dir {
   () => {

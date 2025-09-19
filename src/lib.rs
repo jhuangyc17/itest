@@ -1,18 +1,21 @@
-//! This crate provides several utilities to make examining the result of Rust
-//! integration test more convenient.
+//! This crate provides utility for Rust integration tests to:
 //!
-//! # Example Usage
-//! ```rust
-//! fn should_pass() {
-//!   let dir: PathBuf = new_test_dir!();
+//! 1. Create semi-persistent output directory for each test case to operate on
+//! 2. Execute command and capture outputs
 //!
-//!   // Uses `dir` as output directory for the rust binary under test.
-//! }
-//! ```
+//! See [ITest] for example usage.
 
-mod cmd;
-mod test_dir;
+mod itest;
 
-pub use crate::cmd::{CargoCmd, Cmd};
-pub use crate::test_dir::TestDir;
+pub use crate::itest::{CmdOutput, ITest};
 pub use color_eyre::eyre::Result;
+
+// The #[cfg(doc)] attribute ensures this module is only compiled for documentation.
+// #[cfg(doc)]
+// #[doc(hidden)]
+// // #[path = "../tests"]
+// mod doc_tests {
+//   // Include the content of your test file
+//   #[doc = include_str!("../tests/test_example_bin.rs")]
+//   mod test_example_bin {}
+// }

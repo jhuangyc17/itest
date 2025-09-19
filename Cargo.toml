@@ -6,10 +6,13 @@ authors = ["Jack Huang <jhaungyc@proton.me"]
 keywords = ["test"]
 
 [[bin]]
-name = "test_bin"
+name = "example_bin"
 
 [dependencies]
 project-root = "0.2.2"
 color-eyre = "0.6.5"
 stdext = "0.3.3"
 assert_cmd = "2.0"
+
+[dev-dependencies]
+assertables = "9.8.2"

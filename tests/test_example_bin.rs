@@ -25,6 +25,11 @@ fn should_run_example_bin() -> Result<()> {
   let itest: ITest = new_itest!()?;
 
   //
+  // Path of output dir should be as expected
+  assert_eq!(itest.test_output_dir(), test_dir);
+  assert_eq!(itest.test_output_dir_str(), test_dir.to_str().unwrap());
+
+  //
   // Empty test directory is created up on creation of ITest
   //
   assert!(std::fs::exists(&test_dir)?);

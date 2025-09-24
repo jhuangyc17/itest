@@ -71,6 +71,14 @@ impl ITest {
     &self.test_output_dir
   }
 
+  /// Convenient method to output directory path to str.
+  pub fn test_output_dir_str(&self) -> &str {
+    self
+      .test_output_dir
+      .to_str()
+      .expect("Expect valid utf-8 path")
+  }
+
   /// Executes a binary.
   pub fn exec(&self, id: &str, bin: &str, args: &[&str]) -> Result<CmdOutput> {
     let mut cmd = Command::new(bin);

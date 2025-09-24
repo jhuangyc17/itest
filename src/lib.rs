@@ -9,7 +9,7 @@ mod itest;
 
 pub use crate::itest::{CmdOutput, ITest};
 pub use color_eyre::eyre::Result;
-pub use stdext::function_name;
+extern crate stdext;
 
 // The #[cfg(doc)] attribute ensures this module is only compiled for documentation.
 // #[cfg(doc)]

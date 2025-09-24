@@ -7,7 +7,7 @@ use std::process::{Command, ExitStatus, Output};
 #[macro_export]
 macro_rules! new_itest {
   () => {
-    ITest::new(stdext::function_name!())
+    ITest::new($crate::stdext::function_name!())
   };
 }
 
